@@ -3,338 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Kesehatan Mental</title>
-    <style>
-        /* Modern Reset & Base */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #F8FAFC;
-            color: #1E293B;
-            line-height: 1.6;
-            padding: 50px 20px;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* Hero Header */
-        .hero {
-            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
-            border-radius: 20px;
-            padding: 40px;
-            color: white;
-            text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            font-weight: 400;
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0F172A;
-            margin: 40px 0 20px 0;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .section-title::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 32px;
-            background: #3B82F6;
-            border-radius: 4px;
-        }
-
-        /* UI Cards Layout */
-        .card {
-            background: white;
-            border-radius: 16px;
-            border: 1px solid #E2E8F0;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-        .card-header {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1E3A8A;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #F1F5F9;
-            padding-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Flex & Grid Systems */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-        }
-        @media (max-width: 768px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Content Blocks */
-        .block-item {
-            background: #F8FAFC;
-            border-radius: 12px;
-            padding: 20px;
-            border-left: 5px solid #3B82F6;
-            margin-bottom: 15px;
-        }
-        .block-item h4 {
-            font-weight: 700;
-            color: #0F172A;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        /* Custom Badge / Pill */
-        .badge {
-            display: inline-block;
-            padding: 6px 14px;
-            background-color: #EFF6FF;
-            color: #2563EB;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        /* Lists formatting */
-        ul, ol {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 12px;
-            color: #475569;
-            font-size: 1.05rem;
-        }
-        li strong {
-            color: #0F172A;
-        }
-
-        /* Color variations for blocks */
-        .bg-blue { border-left-color: #3B82F6; background: #EFF6FF; }
-        .bg-green { border-left-color: #10B981; background: #ECFDF5; }
-        .bg-purple { border-left-color: #8B5CF6; background: #F5F3FF; }
-        .bg-orange { border-left-color: #F59E0B; background: #FFFBEB; }
-        .bg-red { border-left-color: #EF4444; background: #FEF2F2; }
-
-    </style>
+    <title>Dashboard Ringkasan Kesehatan Mental</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-
-    <!-- HERO HEADER -->
-    <div class="hero">
-        <h1>KESEHATAN MENTAL</h1>
-        <p>Modul Universitas Sebelas Maret (UNS)</p>
-    </div>
-
-    <!-- ==================== TEMA 1.1 ==================== -->
-    <div class="section-title">Tema 1.1 Konsep Dasar Kesehatan Mental</div>
+<div class="app-container">
     
-    <div class="card">
-        <div class="card-header">📜 Linimasa & Sejarah Perkembangan</div>
-        <ol>
-            <li><strong>Abad ke-19 (Jerman, 1875M):</strong> Kajian mengenai ilmu kesehatan mental pertama kali mulai dikenal luas.</li>
-            <li><strong>Pertengahan Abad ke-20:</strong> Berkembang menjadi ilmu praktis untuk bimbingan dan konseling di ranah domestik, sekolah, hingga masyarakat.</li>
-            <li><strong>Fase Awal:</strong> Semula sangat terbatas dan hanya diperuntukkan bagi individu yang mengalami gangguan kejiwaan saja.</li>
-            <li><strong>Dua Era Utama:</strong> Terbagi menjadi Zaman Pra-Ilmiah dan Zaman Modern.</li>
-            <li><strong>Zaman Pra-Ilmiah:</strong> Terdiri atas era <em>Animisme</em> (percaya jiwa dikuasai roh/dewa) dan era <em>Naturalisme</em> (gangguan dianggap fenomena alam, bukan roh).</li>
-            <li><strong>Zaman Modern:</strong> Pergeseran total ke arah medis dan rasionalitas ilmiah, memicu lahirnya psikologi abnormal dan psikiatri di Amerika.</li>
-            <li><strong>Benjamin Rush (1745-1813):</strong> Mempelopori penanganan medis bagi pasien gangguan ingatan/mental ("lunatics") di RS Pennsylvania.</li>
-            <li><strong>Diferensiasi Bangsal:</strong> 13 tahun berselang, Rush mendirikan bangunan khusus dengan pemisahan ruangan pasien pria dan wanita.</li>
-            <li><strong>Dorothea Dix & Clifford Beers:</strong> Mantan pasien RSJ yang berkolaborasi memperjuangkan aspek pencegahan serta hak pelayanan untuk kaum miskin.</li>
-            <li><strong>Era Global:</strong> Pergerakan ini terus terorganisasi hingga melahirkan lembaga internasional seperti World Federation for Mental Health dan WHO.</li>
-        </ol>
-    </div>
+    <header class="main-header">
+        <div class="header-content">
+            <span class="header-tag">Modul Perkuliahan Psikologi UNS</span>
+            <h1>KESEHATAN MENTAL</h1>
+            <p>Intervensi Komunitas & Penerapan Psikologi Positif</p>
+        </div>
+    </header>
 
-    <div class="card">
-        <div class="card-header">💡 Definisi & Pemikiran Tokoh</div>
-        <div class="grid-2">
-            <div class="block-item bg-blue">
-                <h4>Semiun (2006)</h4>
-                <p>Kesehatan mental diartikan dari kata <em>mental hygiene</em> (mens: jiwa/roh, hygiene: ilmu kesehatan). Memandang manusia sebagai totalitas psikofisik yang kompleks.</p>
+    <main class="content-area">
+        
+        <section class="topic-section">
+            <h2 class="section-title">Tema 1.1 Konsep Dasar Kesehatan Mental</h2>
+            
+            <div class="card card-full">
+                <div class="card-badge bg-primary">Kronologi</div>
+                <h3>Sejarah & Perkembangan Kesehatan Mental</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="time">Abad ke-19 (1875M)</span>
+                        <p>Kajian kesehatan mental pertama kali mulai dikenal luas di Jerman.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Awal Mula</span>
+                        <p>Sangat terbatas dan hanya diperuntukkan bagi individu yang mengalami gangguan kejiwaan saja (bukan umum).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Zaman Pra-Ilmiah</span>
+                        <p>Terbagi atas era <strong>Animisme</strong> (jiwa dikuasai roh/dewa) dan era <strong>Naturalisme</strong> (gangguan akibat fenomena alam, bukan roh).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Zaman Modern</span>
+                        <p>Pergeseran dari animisme ke pengobatan medis ilmiah (rasional). Mulai berkembang psikologi abnormal dan psikiatri di Amerika.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Era Benjamin Rush</span>
+                        <p>Rush (1745-1813) menjadi staf medis di RS Pennsylvania mengampu 24 pasien gangguan ingatan ("lunatics"). 13 tahun kemudian ia membangun rumah sakit khusus dengan memisahkan pasien pria dan wanita.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Pertengahan Abad-20</span>
+                        <p>Berkembang pesat menjadi ilmu praktis sehari-hari dalam bentuk bimbingan & konseling di rumah tangga, sekolah, dan lembaga masyarakat.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="time">Gerakan Tokoh & Global</span>
+                        <p>Dorothea Lynde Dix dan Clifford Whittingham Beers menekankan pencegahan serta pertolongan bagi orang lemah/miskin. Organisasi terus berkembang membentuk <em>The World Federation for Mental Health</em> dan WHO.</p>
+                    </div>
+                </div>
             </div>
-            <div class="block-item bg-purple">
-                <h4>Darajat (dalam Bastaman, 2001)</h4>
-                <p>Keserasian yang sungguh-sungguh antara fungsi kejiwaan dan adaptasi diri terhadap lingkungan berlandaskan iman untuk hidup bermakna di dunia & akhirat.</p>
-            </div>
-            <div class="block-item bg-green">
-                <h4>Jaelani (2001)</h4>
-                <p>Ilmu kesehatan jiwa yang secara khusus membahas dinamika kehidupan rohani yang sehat pada totalitas pribadi manusia.</p>
-            </div>
-            <div class="block-item bg-orange">
-                <h4>Hawari (1997)</h4>
-                <p>Kondisi medis yang memberikan ruang bagi pertumbuhan fisik, intelektual, dan emosional secara optimal serta selaras dengan orang lain.</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="grid-2">
-        <div class="card">
-            <div class="card-header">🧬 Faktor Internal</div>
-            <ul>
-                <li>Struktur dan corak Kepribadian</li>
-                <li>Kondisi fisik dan biologis</li>
-                <li>Tahap perkembangan dan kematangan fungsi</li>
-                <li>Kondisi psikologis dasar</li>
-                <li>Nilai keberagamaan/spiritualitas</li>
-                <li>Sikap rasional menghadapi problem hidup</li>
-                <li>Keseimbangan dan kejernihan berpikir</li>
-            </ul>
-        </div>
-        <div class="card">
-            <div class="card-header">🌍 Faktor Eksternal</div>
-            <ul>
-                <li>Kondisi finansial & Keadaan Ekonomi</li>
-                <li>Aturan kebudayaan lokal</li>
-                <li>Dinamika lingkungan keluarga</li>
-                <li>Interaksi sosial kemasyarakatan</li>
-                <li>Iklim institusi pendidikan</li>
-            </ul>
-        </div>
-    </div>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-badge bg-success">Perspektif</div>
+                    <h3>Definisi Menurut Tokoh</h3>
+                    <div class="definition-list">
+                        <div class="def-item">
+                            <strong>Semiun (2006)</strong>
+                            <p>Terjemahan dari <em>mental hygiene</em> (mens: jiwa/roh, hygiene: ilmu kesehatan). Membicarakan kehidupan mental dengan memandang manusia sebagai totalitas psikofisik yang kompleks.</p>
+                        </div>
+                        <div class="def-item">
+                            <strong>Darajat (dalam Bastaman, 2001)</strong>
+                            <p>Terwujudnya keserasian sungguh-sungguh antara fungsi kejiwaan dan terciptanya penyesuaian diri antara manusia dengan diri sendiri & lingkungan, berlandaskan iman-taqwa demi hidup bahagia dunia-akhirat.</p>
+                        </div>
+                        <div class="def-item">
+                            <strong>Jaelani (2001)</strong>
+                            <p>Ilmu kesehatan jiwa yang memasalahkan kehidupan rohani yang sehat, memandang pribadi sebagai totalitas psikofisik yang kompleks.</p>
+                        </div>
+                        <div class="def-item">
+                            <strong>Hawari (1997)</strong>
+                            <p>Kondisi yang memungkinkan perkembangan fisik, intelektual, dan emosional yang optimal, selaras dengan keadaan orang lain.</p>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="card">
-        <div class="card-header">🎯 Aspek & Kriteria Kesehatan Mental</div>
-        <div class="block-item">
-            <strong>Aspek Utama (Darajat):</strong> Keserasian total fungsi kejiwaan, kecakapan penyesuaian diri yang positif, keselarasan hidup bermasyarakat, serta pencapaian kebahagiaan dunia-akhirat.
-        </div>
-        <div class="block-item">
-            <strong>Kriteria Klinis (Schneiders):</strong> Efisiensi kerja mental, kontrol dan integrasi tingkah laku, pengelolaan konflik/frustrasi, dominasi emosi positif, kedamaian pikiran, konsep diri sehat, identitas ego otonom, serta hubungan riil dengan kenyataan.
-        </div>
-    </div>
+                <div class="card flex-column">
+                    <div class="card-badge bg-warning">Dinamika</div>
+                    <h3>Faktor Pemengaruh & Kriteria</h3>
+                    
+                    <h4 class="sub-heading">Faktor Kesehatan Mental (Darajat)</h4>
+                    <div class="factor-grid">
+                        <div class="factor-pill internal">
+                            <strong>Faktor Internal:</strong> Kepribadian, kondisi fisik, perkembangan & kematangan, kondisi psikologis, keberagamaan, sikap hadapi problema, dan keseimbangan berpikir.
+                        </div>
+                        <div class="factor-pill external">
+                            <strong>Faktor Eksternal:</strong> Keadaan ekonomi, budaya, dan kondisi lingkungan (keluarga, masyarakat, pendidikan).
+                        </div>
+                    </div>
 
-    <div class="card">
-        <div class="card-header">🧩 6 Model Sehat Mental</div>
-        <div class="grid-3">
-            <div class="block-item bg-blue">
-                <strong>1. Above Normal</strong><br>Kondisi optimal di atas rata-rata populasi umum.
+                    <h4 class="sub-heading" style="margin-top: 20px;">9 Kriteria Sehat Mental (Schneiders)</h4>
+                    <ul class="styled-list">
+                        <li>Efisiensi mental yang baik.</li>
+                        <li>Pengendalian & integrasi pikiran serta tingkah laku.</li>
+                        <li>Integrasi motif-motif serta pengendalian konflik/frustrasi.</li>
+                        <li>Perasaan dan emosi yang positif dan sehat.</li>
+                        <li>Ketenangan atau kedamaian pikiran.</li>
+                        <li>Sikap-sikap yang sehat terhadap hidup dan kenyataan.</li>
+                        <li>Konsep diri yang sehat.</li>
+                        <li>Identitas ego yang adekuat (stabil dan otonom).</li>
+                        <li>Hubungan yang adekuat dengan kenyataan (tidak berfantasi berlebih).</li>
+                    </ul>
+                </div>
             </div>
-            <div class="block-item bg-green">
-                <strong>2. Positive Psychology</strong><br>Aktualisasi bakat, kekuatan karakter, dan potensi diri.
-            </div>
-            <div class="block-item bg-purple">
-                <strong>3. Maturity Model</strong><br>Representasi tingkat kematangan moral dan spiritualitas.
-            </div>
-            <div class="block-item bg-orange">
-                <strong>4. Social-Emotional Intel</strong><br>Kecerdasan emosi dalam bersosialisasi.
-            </div>
-            <div class="block-item bg-blue">
-                <strong>5. Subjective Well-Being</strong><br>Rasa puas, senang, dan absennya gejala depresi.
-            </div>
-            <div class="block-item bg-green">
-                <strong>6. Resilience Positive</strong><br>Daya tahan adaptif menghadapi badai hidup.
-            </div>
-        </div>
-    </div>
 
-    <!-- ==================== TEMA 1.2 ==================== -->
-    <div class="section-title">Tema 1.2 Penyesuaian Diri & Psikologi Positif</div>
+            <div class="card card-full">
+                <div class="card-badge bg-purple">Teori</div>
+                <h3>Aspek & 6 Model Sehat Mental</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4 class="sub-heading">4 Aspek Kesehatan Mental (Darajat)</h4>
+                        <ol class="numbered-list">
+                            <li>Terwujudnya keserasian sungguh-sungguh antara fungsi kejiwaan.</li>
+                            <li>Terciptanya penyesuaian diri antara manusia dengan dirinya sendiri.</li>
+                            <li>Penyesuaian diri yang sehat terhadap lingkungan dan masyarakat.</li>
+                            <li>Bertujuan mencapai kehidupan bermakna & bahagia di dunia-akhirat.</li>
+                        </ol>
+                        
+                        <h4 class="sub-heading" style="margin-top: 20px;">Prinsip Dasar Kesehatan Mental (Jaelani)</h4>
+                        <p class="text-muted">Dasar yang harus ditegakkan manusia: Gambaran/sikap baik terhadap diri sendiri, integrasi diri (keseimbangan id, ego, super ego), perwujudan/aktualisasi diri, kemampuan menerima orang lain/aktivitas sosial, minat pada tugas/pekerjaan, agama & falsafah hidup, pengawasan diri (self awareness), serta rasa benar & tanggung jawab.</p>
+                    </div>
+                    <div>
+                        <h4 class="sub-heading">Enam (6) Model Sehat Mental</h4>
+                        <div class="model-box-grid">
+                            <div class="model-mini-card"><strong>Above Normal:</strong> Kondisi mental di atas rata-rata/normal secara objektif. Punya otonomi, empati, dan tahan stres.</div>
+                            <div class="model-mini-card"><strong>Positive Psychology:</strong> Aktualisasi diri (Maslow). Terdiri atas bakat, enabler, kekuatan, dan hasil.</div>
+                            <div class="model-mini-card"><strong>Maturity:</strong> Bentuk kedewasaan (Model moral Kohlberg & spiritual James Fowler).</div>
+                            <div class="model-mini-card"><strong>Social & Emotional Intelligence:</strong> Tingginya kecerdasan emosi/sosial cerminan sehat mental.</div>
+                            <div class="model-mini-card"><strong>Subjective Well-Being:</strong> Kesejahteraan subjektif, rasa puas/senang, dan absennya depresi.</div>
+                            <div class="model-mini-card"><strong>Resilience Positive Psychology:</strong> Daya tahan, sukses beradaptasi dengan jatuh bangun hidup.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="card">
-        <div class="card-header">🔄 Mekanisme Penyesuaian Diri (Adjustment)</div>
-        <p style="margin-bottom: 15px;">Proses dinamis kontinu untuk menyelaraskan diri dengan tuntutan internal maupun realitas lingkungan sosial sekitar guna mengikis emosi negatif.</p>
-        <div class="grid-2">
-            <div class="block-item bg-green">
-                <h4>Indikator Positif</h4>
-                <p>Kontrol emosi prima, minim pertahanan diri semu, berani akui kegagalan, berpikir objektif-realistis, serta mampu belajar dari kegagalan masa lalu.</p>
-            </div>
-            <div class="block-item bg-red">
-                <h4>Reaksi Negatif</h4>
-                <p><strong>Bertahan:</strong> Menyalahkan orang lain, merasionalisasi kesalahan.<br><strong>Menyerang:</strong> Agresif, balas dendam, marah sadis.<br><strong>Melarikan Diri:</strong> Regresi, delusi/fantasi berlebih.</p>
-            </div>
-        </div>
-    </div>
+        <section class="topic-section">
+            <h2 class="section-title">Tema 1.2 Penyesuaian Diri & Penerapan Psikologi Positif</h2>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-badge bg-primary">Adaptasi</div>
+                    <h3>Konsep Penyesuaian Diri (Adjustment)</h3>
+                    <p class="intro-text">Usaha manusia untuk mencari titik temu antara kondisi diri sendiri dan tuntutan lingkungan agar tercipta keharmonisan dan emosi negatif terkikis habis.</p>
+                    
+                    <h4 class="sub-heading">Indikator Penyesuaian Positif (Schneiders)</h4>
+                    <ul class="styled-list">
+                        <li>Mampu mengontrol emosi yang berlebihan saat hadapi masalah.</li>
+                        <li>Mekanisme pertahanan diri yang minimal (mengakui kegagalan).</li>
+                        <li>Frustrasi personal yang minimal (tidak putus asa).</li>
+                        <li>Pertimbangan rasional dan kemampuan mengarahkan diri.</li>
+                        <li>Kemampuan belajar dan memanfaatkan pengalaman masa lalu.</li>
+                        <li>Sikap realistik dan objektif bersumber dari pemikiran rasional.</li>
+                    </ul>
+                </div>
 
-    <div class="card">
-        <div class="card-header">⭐ Pilar Utama Psikologi Positif</div>
-        <div class="block-item bg-purple">
-            <span class="badge">Self-Compassion</span>
-            <p>Mengasihi diri sendiri saat terpuruk tanpa menghakimi. Komponen: <em>Self-kindness</em> (ramah pada diri), <em>Common humanity</em> (sadar kegagalan itu manusiawi), dan <em>Mindfulness</em> (menjaga emosi tetap seimbang).</p>
-        </div>
-        <div class="block-item bg-blue">
-            <span class="badge">Psychological Well-Being</span>
-            <p>Kondisi kepuasan hidup yang mencakup: Penerimaan diri utuh, kemandirian otonom, relasi sosial yang hangat, penguasaan lingkungan, tujuan hidup terarah, dan pertumbuhan pribadi kontinu.</p>
-        </div>
-        <div class="block-item bg-orange">
-            <span class="badge">Happiness & Optimisme</span>
-            <p><strong>Happiness:</strong> Penilaian positif menyeluruh atas kenyamanan hidup.<br><strong>Optimisme:</strong> Sudut pandang yang melihat kejadian buruk hanya bersifat sementara <em>(Permanence)</em> dan disebabkan faktor eksternal spesifik <em>(Pervasiveness & Personalization)</em>.</p>
-        </div>
-        <div class="block-item bg-green">
-            <span class="badge">Resiliensi (Daya Bangkit)</span>
-            <p>Terbentuk dari formula: <strong>I Have</strong> (dukungan eksternal), <strong>I Am</strong> (kekuatan internal diri), dan <strong>I Can</strong> (keterampilan sosial-solutif). Tahapannya bergerak dari Mengalah &rarr; Bertahan &rarr; Pemulihan &rarr; Berkembang Pesat <em>(Thriving)</em>.</p>
-        </div>
-    </div>
+                <div class="card">
+                    <div class="card-badge bg-danger">Maladaptif</div>
+                    <h3>Indikator Penyesuaian Diri Negatif</h3>
+                    <div class="reaction-container">
+                        <div class="reaction-block">
+                            <h5>1. Reaksi Bertahan</h5>
+                            <p>Mencari alasan membenarkan tindakan, menekan pengalaman tidak enak ke alam bawah sadar, menyalahkan pihak lain atas kegagalannya.</p>
+                        </div>
+                        <div class="reaction-block">
+                            <h5>2. Reaksi Menyerang</h5>
+                            <p>Membenarkan diri, mau berkuasa/bermusuhan terbuka, menggertak, keras kepala, dendam, melanggar hak orang lain, marah secara sadis.</p>
+                        </div>
+                        <div class="reaction-block">
+                            <h5>3. Reaksi Melarikan Diri</h5>
+                            <p>Memuaskan keinginan lewat angan-angan/fantasi semata, regresi (orang dewasa bertingkah laku model anak-anak).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- ==================== TEMA 1.3 ==================== -->
-    <div class="section-title">Tema 1.3 Kesehatan Mental Masyarakat</div>
+            <div class="card card-full">
+                <div class="card-badge bg-purple">Dinamika</div>
+                <h3>Aspek & Faktor Pemengaruh Adjustment</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4 class="sub-heading">Aspek Penyesuaian Diri (Buchori, 2002)</h4>
+                        <p><strong>Penyesuaian Pribadi:</strong> Menerima diri sendiri (kelebihan & kekurangan), bertindak objektif tanpa rasa benci, kecewa, atau cemas bersalah.</p>
+                        <p style="margin-top: 10px;"><strong>Penyesuaian Sosial:</strong> Terjadi di lingkup interaksi (keluarga, sekolah, teman, masyarakat) dengan mematuhi aturan, norma, adat, dan nilai sosial.</p>
+                    </div>
+                    <div>
+                        <h4 class="sub-heading">Faktor yang Mempengaruhi (Soeparwoto)</h4>
+                        <p><strong>Faktor Internal:</strong> Motif (dorongan prestasi/sosial), Konsep Diri (konsep positif mempermudah adaptasi), Persepsi, Sikap, Intelegensi & Minat, serta Kepribadian (ekstrovert cenderung lebih mudah adaptasi).</p>
+                        <p style="margin-top: 10px;"><strong>Faktor Eksternal:</strong> Keluarga (pola asuh demokrasi), Kondisi sekolah yang kondusif, Kelompok sebaya, Prasangka sosial (label negatif menghambat), Hukum dan Norma.</p>
+                    </div>
+                </div>
+            </div>
 
-    <div class="card">
-        <div class="card-header">👥 Realitas Sosial & Literasi Komunitas</div>
-        <p>Data Riskesdas menunjukkan peningkatan gangguan jiwa berat di Indonesia (ODGJ terawat nasional 17,08%). Hambatan utama penanganan adalah tingginya stigma negatif akibat rendahnya literasi kesehatan mental di tengah masyarakat.</p>
-        <div class="grid-2" style="margin-top: 15px;">
-            <div class="block-item">
-                <h4>Karakter Sehat Psikis-Sosial</h4>
-                <p>Respek diri, punya rasa humor yang cerdas, empati tinggi, senang menolong sesama (altruis), fleksibel, serta toleran tanpa memandang SARA.</p>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-badge bg-warning">Diri</div>
+                    <h3>Konsep Diri (Self-Concept)</h3>
+                    <p>Cara dan sikap individu memandang dirinya secara fisik maupun psikis (karakteristik, kemampuan, kelemahan, dan kegagalan).</p>
+                    <h4 class="sub-heading">5 Komponen Self-Concept</h4>
+                    <p><strong>1. Citra Diri (Self Image):</strong> Tanggapan fisik tubuh masa lalu & sekarang.<br>
+                       <strong>2. Ideal Diri:</strong> Harapan pribadi/cita-cita mengenai bagaimana semestinya berperilaku.<br>
+                       <strong>3. Harga Diri (Self Esteem):</strong> Penilaian fakta vs harapan. Semakin dekat fakta dengan ideal diri, harga diri makin tinggi.<br>
+                       <strong>4. Peran Diri:</strong> Tingkah laku & nilai yang diharapkan kelompok sosial masyarakat.<br>
+                       <strong>5. Identitas Diri:</strong> Kesadaran bahwa diri berbeda dari individu lain.</p>
+                    <p class="text-muted" style="margin-top: 10px;"><em>Faktor Penghambat:</em> Kegagalan terus menerus, Overthinking, dan Depresi.</p>
+                </div>
+                <div class="card">
+                    <div class="card-badge bg-success">Karakter</div>
+                    <h3>Karakteristik Konsep Diri</h3>
+                    <div class="grid-2">
+                        <div class="status-box box-success">
+                            <h5>Karakter Positif</h5>
+                            <ul>
+                                <li>Yakin mampu atasi masalah.</li>
+                                <li>Merasa setara dengan orang lain.</li>
+                                <li>Mau introspeksi & memperbaiki diri.</li>
+                                <li>Menerima pujian tanpa rasa malu/hanyut.</li>
+                                <li>Tidak cemas/terancam dikritik.</li>
+                                <li>Lapang dada terima info negatif diri.</li>
+                            </ul>
+                        </div>
+                        <div class="status-box box-danger">
+                            <h5>Karakter Negatif</h5>
+                            <ul>
+                                <li>Pesimis menghadapi kompetisi.</li>
+                                <li>Sangat sensitif jika dikritik.</li>
+                                <li>Responsif berlebih pada pujian.</li>
+                                <li>Suka mengkritik hal-hal kecil.</li>
+                                <li>Merasa tidak disenangi orang lain.</li>
+                                <li>Tidak mengakui kelebihan orang lain.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="block-item bg-red">
-                <h4>Pemicu Stres Kerja</h4>
-                <p>Kesejahteraan honor/gaji buruk, konflik internal dengan atasan/kolega, beban tugas berlebih, iklim kerja kotor/bising, serta minimnya ruang ibadah dan cuti libur.</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="card">
-        <div class="card-header">🛡️ Tiga Pilar Intervensi Komunitas</div>
-        <div class="grid-3">
-            <div class="block-item bg-blue">
-                <h4>1. Upaya Preventif</h4>
-                <p>Mencegah timbulnya gangguan jiwa baru, mengurangi risiko gangguan kambuh, serta memelihara kebutuhan fisik-psikologis dasar individu secara dini.</p>
+            <div class="card card-full">
+                <div class="card-badge bg-primary">Aplikasi</div>
+                <h3>Penerapan Intervensi Psikologi Positif</h3>
+                <div class="grid-3">
+                    <div class="feature-box">
+                        <h4>Self-Compassion</h4>
+                        <p>Mengasihi diri sendiri layaknya mengasihi orang lain yang kesulitan (Neff). Ciri: menerima kelemahan, melihat kegagalan sebagai hal umum.</p>
+                        <p><strong>Komponen:</strong> Self-kindness vs Self-judgment; Common humanity vs Isolation; Mindfulness vs Overidentification.</p>
+                        <p class="text-muted"><em>Faktor:</em> Lingkungan asuh, Usia (remaja paling rendah), Jenis kelamin (pria sedikit lebih tinggi), dan Budaya.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Psychological Well-Being (PWB)</h4>
+                        <p>Individu bahagia, puas, stres rendah, sehat fisik-mental, kualitas hidup baik (APA). Ryff (1989) membagi 6 aspek:</p>
+                        <p>Penerimaan diri, Hubungan positif dengan orang lain, Kemandirian (Autonomy), Penguasaan lingkungan, Tujuan hidup, dan Pengembangan pribadi.</p>
+                        <p class="text-muted"><em>Faktor:</em> Usia, pendidikan, jenis kelamin (wanita hubungan interpersonal lebih baik), sosial ekonomi, dukungan sosial, kepribadian, spiritualitas.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Happiness & Optimisme</h4>
+                        <p><strong>Happiness (Seligman):</strong> Hasil emosi positif dan aktivitas bermakna. Aspek: relasi positif, keterlibatan penuh, makna keseharian, optimisme realistis, resiliensi. Ciri: menghargai diri, terbuka (ekstrovert), kendali diri.</p>
+                        <p><strong>Optimisme (Seligman):</strong> Harapan kuat masalah teratasi. Aspek: <em>Permanence</em> (buruk dianggap sementara), <em>Pervasiveness</em> (sebab spesifik), dan <em>Personalization</em> (gagal akibat eksternal).</p>
+                    </div>
+                </div>
+                <div class="feature-box" style="margin-top: 20px;">
+                    <h4>Resiliensi (Kemampuan Bangkit)</h4>
+                    <p>Kemampuan bangkit dari penderitaan/trauma agar mental lebih kuat. Grotberg membagi aspek menjadi 3 pilar: <strong>I Have</strong> (dukungan eksternal), <strong>I Am</strong> (kekuatan pribadi internal), dan <strong>I Can</strong> (keterampilan sosial & interpersonal).</p>
+                    <p><strong>Tahapan Resiliensi (Coulson):</strong> 1. Mengalah (menyerah/depresi), 2. Bertahan (survival/gagal fungsi wajar), 3. Pemulihan (recovery/fungsi wajar kembali), 4. Berkembang Pesat (Thriving/melampaui level fungsi sebelumnya).</p>
+                </div>
             </div>
-            <div class="block-item bg-red">
-                <h4>2. Upaya Kuratif</h4>
-                <p>Langkah penyembuhan, pemulihan klinis, minimalisasi penderitaan, dan kontrol disabilitas emosi/perilaku (seperti penanganan tantrum anak).</p>
-            </div>
-            <div class="block-item bg-green">
-                <h4>3. Upaya Promotif</h4>
-                <p>Meningkatkan derajat kesehatan jiwa secara optimal dan memberantas stigma negatif terhadap ODGJ melalui edukasi di sekolah, kantor, dan faskes.</p>
-            </div>
-        </div>
-    </div>
+        </section>
 
+        <section class="topic-section">
+            <h2 class="section-title">Tema 1.3 Kesehatan Mental Masyarakat</h2>
+            
+            <div class="card card-full">
+                <div class="card-badge bg-danger">Komunitas</div>
+                <h3>Kondisi Masyarakat & Literasi Mental</h3>
+                <p>Data Riskesdas 2018 menunjukkan kenaikan penderita gangguan jiwa (ODGJ berat diobati & tidak ditelantarkan nasional sebesar 17,08%). Stigma masyarakat sangat tinggi akibat rendahnya literasi kesehatan mental.</p>
+                <p><strong>Dampak Peningkatan Literasi Kesehatan Mental:</strong> Mengetahui cara mencegah gangguan mental, paham kondisi dasar, opsi pencarian pertolongan/perawatan, strategi mandiri masalah ringan, dan keterampilan pertolongan pertama saat krisis.</p>
+                
+                <h4 class="sub-heading" style="margin-top: 20px;">Karakteristik Pribadi Sehat Mental</h4>
+                <div class="grid-4">
+                    <div class="status-box"><strong>Secara Fisik:</strong> Perkembangan normal, berfungsi melakukan tugas fisik, tidak sakit-sakitan.</div>
+                    <div class="status-box"><strong>Secara Psikis:</strong> Respek diri-orang lain, punya insight & humor, respon emosional wajar, realistik, kreatif, terbuka, bebas memilih/bertindak.</div>
+                    <div class="status-box"><strong>Secara Sosial:</strong> Empati & kasih sayang, senang menolong (altruis), relasi sehat penuh cinta, toleran tanpa memandang SARA/kelas sosial.</div>
+                    <div class="status-box"><strong>Secara Moral/Religius:</strong> Beriman & taat kepada Tuhan, jujur, amanah, bertanggung jawab, dan ikhlas beramal.</div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-badge bg-warning">Lingkungan</div>
+                    <h3>Penerapan di Berbagai Lingkup</h3>
+                    <p><strong>Keluarga:</strong> Sangat penting demi suasana harmonis, mencegah <em>sibling rivalry</em> yang memicu pertengkaran/iri hati.</p>
+                    <p style="margin-top: 10px;"><strong>Sekolah:</strong> Didasarkan pada asumsi iklim sosioemosional sekolah memengaruhi peserta didik. Penting dipahami kepsek dan guru BK/konselor.</p>
+                    <p style="margin-top: 10px;"><strong>Tempat Kerja:</strong> Menjadi sumber stres kerja bagi pimpinan maupun karyawan.</p>
+                </div>
+                <div class="card">
+                    <div class="card-badge bg-danger">Stres Kerja</div>
+                    <h3>Pemicu Stres di Lingkungan Kerja</h3>
+                    <ul class="styled-list">
+                        <li>Kesejahteraan honor/gaji yang tidak mencukupi kebutuhan.</li>
+                        <li>Konflik dengan personil lain (atasan, kolega, partner).</li>
+                        <li>Pekerjaan tidak sesuai dengan kemampuan diri.</li>
+                        <li>Kompetisi atau persaingan tidak sehat antar karyawan.</li>
+                        <li>Beban kerja terlalu berat tidak sebanding dengan honor.</li>
+                        <li>Lingkungan kerja tidak kondusif (bising, kotor, sumpek, ventilasi buruk).</li>
+                        <li>Kurangnya waktu istirahat dan hari libur yang minim.</li>
+                        <li>Tidak ada komunikasi terbuka antara pimpinan dengan karyawan.</li>
+                        <li>Jenjang karir atau kenaikan pangkat yang tidak tertata baik.</li>
+                        <li>Pegawai tidak diberikan kesempatan menunaikan ibadah sesuai keyakinan.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card card-full">
+                <div class="card-badge bg-success">Intervensi</div>
+                <h3>Tiga Pilar Intervensi Kesehatan Jiwa Komunitas</h3>
+                <div class="responsive-table-holder">
+                    <table class="modern-ui-table">
+                        <thead>
+                            <tr>
+                                <th>Upaya Preventif (Pencegahan)</th>
+                                <th>Upaya Kuratif (Penyembuhan)</th>
+                                <th>Upaya Promotif (Peningkatan)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>Mencegah masalah kejiwaan & kambuhnya gangguan jiwa.</li>
+                                        <li>Mengurangi faktor risiko di masyarakat atau perorangan.</li>
+                                        <li>Mencegah dampak masalah psikososial.</li>
+                                    </ul>
+                                    <p class="table-note">* Dilakukan lewat pemenuhan kasih sayang, rasa aman, aktualisasi diri, serta kehangatan rumah tangga.</p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Penyembuhan, pemulihan, dan pengurangan penderitaan.</li>
+                                        <li>Pengendalian disabilitas dan gejala penyakit.</li>
+                                    </ul>
+                                    <p class="table-note">* Fokus pada perbaikan kemampuan penyesuaian diri dan kontrol pertahanan diri (misal menangani anak tantrum/agresif).</p>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Mempertahankan & meningkatkan derajat kesehatan jiwa masyarakat secara optimal.</li>
+                                        <li>Menghilangkan stigma dan diskriminasi terhadap ODGJ.</li>
+                                        <li>Meningkatkan pemahaman, penerimaan, dan peran serta masyarakat.</li>
+                                    </ul>
+                                    <p class="table-note">* Dilakukan lewat KIE (Komunikasi, Informasi, Edukasi) di pola asuh keluarga, sekolah, tempat kerja, faskes, hingga lembaga keagamaan.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
 </div>
 
 </body>
